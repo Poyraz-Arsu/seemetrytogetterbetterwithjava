@@ -1,0 +1,21 @@
+// This is my first lines of code with Java which i am currently learning with udemy java bootcamp
+
+public class FirstProgram{
+      public static void main(String[] args) {
+        
+     
+     System.out.println("Printing is fun!");
+
+     System.out.println("Python might be better idk?");
+
+     System.out.println("My dog ate my Java.");
+     
+     System.out.println("I spilled java all over my paper.");
+
+    }
+
+
+
+
+
+    }
