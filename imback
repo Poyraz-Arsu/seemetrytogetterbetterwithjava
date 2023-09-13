@@ -1,0 +1,66 @@
+//Had to take a break from coding but im back, here's a fun trivia for you!
+
+
+
+import java.util.Scanner;
+
+public class quizz{
+ 
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int point = 0;
+System.out.println("2016 olmpt nerede yapildi?");
+System.out.println("\ta)Türkiye \n\tb)Italya\n\tc)Brezilya \n\td)İsveç");
+        String cvp1 = scan.nextLine();
+        scan.nextLine();//Nextln tuzagi
+        
+System.out.println("En sicak gezegen hangisidir?");
+System.out.println("\ta)Venüs \t\nb)Satürn \t\nc)Merkür \t\nd)Mars");
+        String cvp2 = scan.nextLine();
+        scan.nextLine();//Nextline tuzagi
+System.out.println("En nadir kan grubu hangisidir?");
+System.out.println("\ta)0 \t\nb)A \t\nc)B \t\nAB-negative");
+        String cvp3 = scan.nextLine();
+        
+System.out.println("Bu karakterlerden hangisi Harry Potter ile dosttur?");   
+System.out.println("\ta)Hermonie \t\nb)Ron \t\nc)Voldemort \t\nd)Petunia");
+
+    String cvp4 = scan.nextLine();
+        scan.nextLine();//Trap
+    
+    if(cvp1.equals("c")){
+        point += 5;
+    } 
+    
+    if (cvp2.equals("a")){
+        point += 5;
+    }
+    
+    if(cvp3.equals("d")){
+        point += 5;
+    }
+    
+    if(cvp4.equals("a")|| cvp4.equals("b")){   
+    point += 5;
+}
+
+
+    System.out.println("You scored "+point+" points.");
+    if(point>=15){
+        System.out.println("Wow,you know your stuff!");
+
+    } if(point<=15&& point>=5){
+        System.out.println("Not bad!");
+         }
+       else {
+        System.out.println("Try again");
+       }
+
+        
+    } 
+    
+   
+scan.close();
+    
+
+ }
