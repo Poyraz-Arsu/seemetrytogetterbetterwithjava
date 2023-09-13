@@ -1,0 +1,24 @@
+public class tipTheWaiter {
+    public static void main(String[] args) {
+        
+    System.out.println("Hope you enjoyed your meal!");
+    System.out.println("Your bill came up to 100");
+      
+
+
+        tipTheWaiter(100);
+        tipTheWaiter(77.5);
+        tipTheWaiter(18.6);
+
+
+
+    }
+
+ public static void tipTheWaiter(double bill) {
+    System.out.println("Service was great! I will pay "+ ((bill*115)/100)+ " in total");
+ }
+ 
+
+
+
+}
