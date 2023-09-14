@@ -1,0 +1,43 @@
+//java is not efficent with defining and using functions(At least i think like that for now)
+
+public class returnValues {
+    public static void main(String[] args) {
+    
+    double area1 = calculateArea(3, 5);
+    double area2 = calculateArea(0.7, 77);
+    double area3 = calculateArea(6.05, 4.5);
+
+  String French =  areaExplained("French");
+    areaExplained("Spanish");
+
+
+    System.out.println(French);
+    System.out.println(area2);
+
+
+    }
+    public  static double calculateArea(double lenght,double width){
+    //Area calculating function
+        double area = lenght*width;
+        return area;
+    } 
+
+    public static String areaExplained(String explanation){
+        //Switching between different languages in explaining the area calculating method
+        switch (explanation) {
+            case "English": return "Area equals length * width";
+
+            case "French" : return "La surface est egale a la longueur * la largeur";
+
+            case "Spanish"  : return "area es igual a largo * ancho" ;
+
+        
+            default: return "Language unavailable";
+
+            
+         }
+    }
+
+
+
+}
