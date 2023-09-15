@@ -1,0 +1,138 @@
+import java.util.Scanner;
+
+public class DrawingAnimals {
+public static void main(String[] args) {
+    
+    Scanner input = new Scanner(System.in);
+    
+    greetingsFunction();
+    
+    String number = input.nextLine();
+
+    printingAnimals(number);
+  //STILL TRYING TO USE FUNCTIONS TO BEST OF MY ABILITES  
+    
+
+
+
+}
+     public static void greetingsFunction(){
+                System.out.println("Welcome to my app,what animal would you like to draw?");
+                System.out.println("Press 1 for Butterfly");
+                System.out.println("Press 2 for Elephant");
+                System.out.println("Press 3 for Bear");
+                System.out.println("Press 4 for Snake");
+
+            }
+        
+
+
+
+
+
+
+
+
+    public static void printingAnimals(String number){
+
+
+        switch (number) {
+            case ("1"):{
+                System.out.println("  .==-.                   .-==.     ");
+                System.out.println("   \\()8`-._  `.   .'  _.-'8()/     ");
+                System.out.println("   (88\"   ::.  \\./  .::   \"88)     ");
+                System.out.println("    \\_.'`-::::.(#).::::-'`._/      ");
+                System.out.println("      `._... .q(_)p. ..._.'         ");
+                System.out.println("        \"\"-..-'|=|`-..-\"\"       ");
+                System.out.println("        .\"\"' .'|=|`. `\"\".       ");
+                System.out.println("      ,':8(o)./|=|\\.(o)8:`.        ");
+                System.out.println("     (O :8 ::/ \\_/ \\:: 8: O)      ");
+                System.out.println("      \\O `::/       \\::' O/       ");
+                System.out.println("       \"\"--'         `--\"\"      ");
+            break;    }
+                
+            case("2"):{
+                System.out.println("       _..--\"\"-.                  .-\"\"--.._ ");
+                System.out.println("   _.-'         \\ __...----...__ /         '-._");
+                System.out.println(" .'      .:::...,'              ',...:::.      '.");
+                System.out.println("(     .'``'''::;                  ;::'''``'.     )");
+                System.out.println(" \\             '-)              (-'             /");
+                System.out.println("  \\             /                \\             /");
+                System.out.println("   \\          .'.-.            .-.'.          /");
+                System.out.println("    \\         | \\0|            |0/ |         /");
+                System.out.println("    |          \\  |   .-==-.   |  /          |");
+                System.out.println("     \\          `/`;          ;`\\`          /");
+                System.out.println("      '.._      (_ |  .-==-.  | _)      _..'");
+                System.out.println("          `\"`\"-`/ `/'        '\\` \\`-\"`\"`");
+                System.out.println("               / /`;   .==.   ;`\\ \\");
+                System.out.println("         .---./_/   \\  .==.  /   \\ \\");
+                System.out.println("        / '.    `-.__)       |    `\"");
+                System.out.println("       | =(`-.        '==.   ;");
+                System.out.println("        \\  '. `-.           /");
+                System.out.println("         \\_:_)   `\"--.....-'");
+    
+    
+            break;    } 
+            
+
+            case("3"):{
+           
+                System.out.println("            ___   .--. ");
+                System.out.println("      .--.-\"   \"-' .- |");
+                System.out.println("     / .-,`          .'");
+                System.out.println("     \\   `           \\");
+                System.out.println("      '.            ! \\");
+                System.out.println("        |     !  .--.  |");
+                System.out.println("        \\        '--'  /.____");
+                System.out.println("       /`-.     \\__,'.'      `\\");
+                System.out.println("    __/   \\`-.____.-' `\\      /");
+                System.out.println("    | `---`'-'._/-`     \\----'    _");
+                System.out.println("    |,-'`  /             |    _.-' `\\");
+                System.out.println("   .'     /              |--'`     / |");
+                System.out.println("  /      /\\              `         | |");
+                System.out.println("  |   .\\/  \\      .--. __          \\ |");
+                System.out.println("   '-'      '._       /  `\\         /");
+                System.out.println("               `\\    '     |------'`");
+                System.out.println("                 \\  |      |");
+                System.out.println("                  \\        /");
+                System.out.println("                   '._  _.'");
+                System.out.println("                      ``");
+    
+    
+    
+    
+            break;    }
+            case("4"):{
+                System.out.println("         ,,'6''-,.");
+                System.out.println("        <====,.;;--.");
+                System.out.println("        _`---===. \"\"\"==__");
+                System.out.println("      //\"\"@@-\\===\\@@@@ \"\"\\\\");
+                System.out.println("     |( @@@  |===|  @@@  ||");
+                System.out.println("      \\\\ @@   |===|  @@  //");
+                System.out.println("        \\\\ @@ |===|@@@ //");
+                System.out.println("         \\\\  |===|  //");
+                System.out.println("___________\\\\|===| //_____,----\"\"\"\"\"\"\"\"\"\"-----,_");
+                System.out.println("  \"\"\"\"---,__`\\===`/ _________,---------,____    `,");
+                System.out.println("             |==||                           `\\   \\");
+                System.out.println("            |==| |                             )   |");
+                System.out.println("           |==| |       _____         ______,--'   '");
+                System.out.println("           |=|  `----\"\"\"     `\"\"\"\"\"\"\"\"         _,-'");
+                System.out.println("            `=\\     __,---\"\"\"-------------\"\"\"''");
+                System.out.println("                \"\"\"\"		");
+            break; }
+            default:{
+                System.out.println("En fazla 4 seçebilirsin");
+            }       
+        
+           
+        
+        
+        
+        
+        
+        
+        
+        }
+
+    }
+}
