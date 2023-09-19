@@ -1,0 +1,50 @@
+import java.util.Random;
+import java.util.Scanner;
+public class diceProject{
+public static void main(String[] args) {
+Scanner scan = new Scanner(System.in);
+
+System.out.println("Hello, can you pick a number between 1 and 6?");
+int num1 = scan.nextInt();
+int num2 = scan.nextInt();
+int num3 = scan.nextInt();
+int numSum = (num1+num2+num3);
+
+int allOfDice = diceCatcher();
+
+if(num1<=6 && num1>=1 && num2>=1 && num2<=6 && num3>=1 && num3<=6 ){
+    if (allOfDice==numSum){
+        System.out.println("Dice sum is: " + allOfDice + " and your sum is " + numSum + " you win!");
+    } else{
+        System.out.println("Dice sum is: " + allOfDice + " and your sum is " + numSum + " you lost!");   
+    }
+    
+} else{
+    System.out.println("Invalid number choice!");
+}
+
+
+
+scan.close();
+
+}
+
+public static int diceNumber(){
+Random rand = new Random();
+int min = 1;
+int max = 6;
+int randomNumberDice = rand.nextInt(max-min+1)+min;
+return   randomNumberDice;
+
+
+}
+public static int diceCatcher(){
+   int diceNum1 = diceNumber();
+   int diceNum2 = diceNumber();
+   int diceNum3 = diceNumber();
+   int diceSum = (diceNum1+diceNum2+diceNum3);
+    return diceSum;
+
+}
+
+}
