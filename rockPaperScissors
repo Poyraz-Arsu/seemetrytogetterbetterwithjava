@@ -1,0 +1,67 @@
+import java.util.Random;
+import java.util.Scanner;
+;
+
+public class rockPaperScissors {
+    public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);    
+String Computer = numberToPlay();      
+    System.out.println("Let's play rock paper scissors!");
+    System.out.println("When i say SHOOT you will pick your move, are you ready?(Say yes or no)");
+    String userResponse = scanner.nextLine();
+    scanner.nextLine();//Nextlie trap
+    
+    
+    if (userResponse.equals("yes")){
+        System.out.println("SHOOT!");
+    String playerMove = scanner.nextLine();
+
+        if(playerMove.equals(Computer)){
+            System.out.println("Your choice: " + playerMove + " Computer's choice: " + Computer + "\nIt's a draw!"); 
+        }else if(playerMove.equals("Rock")&& Computer.equals("Scissors")) {
+           System.out.println("Your choice: " + playerMove + " Computer's choice: " + Computer + "\nYou win!"); 
+        } else if(playerMove.equals("Paper")&& Computer.equals("Rock")) {
+           System.out.println("Your choice: " + playerMove + " Computer's choice: " + Computer + "\nYou win!"); 
+        } else if (playerMove.equals("Scissors")&& Computer.equals("Paper")){
+           System.out.println("Your choice: " + playerMove + " Computer's choice: " + Computer + "\nYou win!"); 
+        }   else {
+           System.out.println("Your choice: " + playerMove + " Computer's choice: " + Computer + "\nYou lose."); 
+        }
+
+    } else{
+        System.out.println("Waiting for you to come back when you are ready!");
+    }
+
+
+    
+      
+    scanner.close();
+    }
+    public static int numberGetter(){ 
+        Random random = new Random();
+        return random.nextInt(4);
+        
+        
+    
+    }
+   public static String numberToPlay(){
+        int deger =   numberGetter();
+        if(deger == 1 ){
+            return "Rock";
+        } else if (deger == 2 ){
+            return "Paper";
+
+        }else {
+            return "Scissors";
+        }
+   }
+
+   public static void printing(){
+        System.out.println(numberToPlay());
+   }
+
+
+
+
+
+}
