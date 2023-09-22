@@ -1,0 +1,29 @@
+//My first lines of code with my new device, feeling good :)
+
+import java.util.Scanner;
+
+public class newOne {
+    public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+        System.out.println("Pick a number to start counting from");
+        int startingPoint = scan.nextInt();
+        System.out.println("Pick a number to count by");
+        int countBy = scan.nextInt();
+        System.out.println("Pick a number to count to");
+        int stopPoint = scan.nextInt();
+       
+        for(int i = startingPoint;i<=stopPoint;i +=countBy){
+            if(i%2 == 0){
+                System.out.println(i + ": Is an double number");
+            }else{
+                System.out.println(i + ": Is an odd number");
+            }
+        } 
+
+
+
+
+        scan.close();
+    }
+    
+}
