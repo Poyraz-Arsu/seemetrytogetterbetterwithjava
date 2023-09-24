@@ -1,0 +1,237 @@
+import java.util.Scanner;
+
+public class realBlackJack {
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    int playerCard1 = randomNum();
+    int playerCard2 = randomNum();    
+        int playerTotal = Math.min(playerCard1, 10) + Math.min(playerCard2,10 );
+    
+    int compCard1 = randomNum();
+    int compCard2 = randomNum();    
+    int compHand = Math.min(compCard1, 10) + Math.min(compCard2, 10 );
+  
+
+
+System.out.println("You get a:  \n" + cardGiver(playerCard1));
+System.out.println("And a:  \n"+ cardGiver(playerCard2) ); 
+System.out.println("Your points : " + playerTotal); 
+System.out.println("The dealer shows:  \n"+ cardGiver(compCard1) );
+System.out.println("And has a card facedown:  "  );
+   
+ System.out.println("   _____\n"+              
+                    "  |o   o|\n"+ 
+                    "  |  o  |\n"+
+                    "  |o   o|\n"+
+                    "  |  o  |\n"+
+                    "  |_____|\n");      
+    
+    System.out.println("Would you like to hit or stay ?");
+    String response = scanner.nextLine();
+    
+    
+        while(response.equalsIgnoreCase("hit")){ 
+         int toAdd = hitOrStay();
+         playerTotal +=  Math.min(toAdd,10);
+         System.out.println("Your new card : " + cardGiver(toAdd));
+         System.out.println("Your new total is: " + playerTotal);
+         System.out.println("Would you like to hit or stay ?");
+         response = scanner.nextLine(); 
+            if(playerTotal>21){
+                System.out.println("You busted!");
+                System.exit(0);
+            }
+        } 
+     
+        
+
+    
+    System.out.println("Dealer's cards are :\n" +cardGiver(compCard1));
+    System.out.println(cardGiver(compCard2));
+    System.out.println("Dealer's hand total is : " + compHand); 
+    if(compHand<17){
+        int newcard = randomNum();
+        cardGiver(newcard);
+        compHand += Math.min(newcard, 10);
+        System.out.println("Dealer gets a \n"+ cardGiver(newcard));
+        System.out.println("Dealer's hand total is : " + compHand);
+    }if(compHand>21){
+        System.out.println("Bust!, the dealer loses.");
+        System.exit(0);
+    }
+
+
+    if(playerTotal>compHand){
+        System.out.println("Your points:" + playerTotal );
+        System.out.println("Computer's points" + compHand );
+        System.out.println("YOU WIN!");
+    }else if(playerTotal<compHand){
+        System.out.println("Your points:" + playerTotal );
+        System.out.println("Computer's points" + compHand );
+        System.out.println("You lose");
+    }else {
+        System.out.println("Your points:" + playerTotal );
+        System.out.println("Computer's points" + compHand );
+        System.out.println("IT'S A DRAW!"); 
+    }
+
+    
+
+        scanner.close();
+
+
+
+
+}
+   
+
+
+        
+
+
+
+
+
+
+            
+     
+            public static int hitOrStay(){
+              int brandNewCard = randomNum();
+            cardGiver(brandNewCard);
+            return brandNewCard;
+            
+                
+             }
+
+             
+
+
+
+
+    public static int randomNum(){
+    int randomNum = (int) ((Math.random()*13)+1);
+    return randomNum;
+    }
+    public static String cardGiver(int randomNum){
+        
+        switch (randomNum) {
+  
+
+      
+            case  1: return
+                       
+              "   _____\n"+
+              "  |A _  |\n"+ 
+              "  | ( ) |\n"+
+              "  |(_'_)|\n"+
+              "  |  |  |\n"+
+              "  |____V|\n";
+              
+          case 2: return
+          
+               "   _____\n"+              
+               "  |2    |\n"+ 
+               "  |  o  |\n"+
+               "  |     |\n"+
+               "  |  o  |\n"+
+               "  |____Z|\n";
+             
+          case 3: return
+             "   _____\n" +
+             "  |3    |\n"+
+             "  | o o |\n"+
+             "  |     |\n"+
+             "  |  o  |\n"+
+             "  |____E|\n";
+          
+          case 4: return
+              "   _____\n" +
+              "  |4    |\n"+
+              "  | o o |\n"+
+              "  |     |\n"+
+              "  | o o |\n"+
+              "  |____h|\n";
+          
+          case 5: return      
+               "   _____ \n" +
+               "  |5    |\n" +
+               "  | o o |\n" +
+               "  |  o  |\n" +
+               "  | o o |\n" +
+               "  |____S|\n";
+          
+          case 6: return
+               "   _____ \n" +
+               "  |6    |\n" +
+               "  | o o |\n" +
+               "  | o o |\n" +
+               "  | o o |\n" +
+               "  |____6|\n";
+          
+          case 7: return
+          
+               "   _____ \n" +
+               "  |7    |\n" +
+               "  | o o |\n" +
+               "  |o o o|\n" +
+               "  | o o |\n" +
+               "  |____7|\n";
+          
+          case 8: return
+          
+               "   _____ \n" +
+               "  |8    |\n" +
+               "  |o o o|\n" +
+               "  | o o |\n" +
+               "  |o o o|\n" +
+               "  |____8|\n";
+          
+          case 9: return
+               "   _____ \n" +
+               "  |9    |\n" +
+               "  |o o o|\n" +
+               "  |o o o|\n" +
+               "  |o o o|\n" +
+               "  |____9|\n";
+          
+          case 10: return
+               "   _____ \n" +
+               "  |10  o|\n" +
+               "  |o o o|\n" +
+               "  |o o o|\n" +
+               "  |o o o|\n" +
+               "  |___10|\n";
+          
+          case 11: return
+          
+               "   _____\n" +
+               "  |J  ww|\n"+ 
+               "  | o {)|\n"+ 
+               "  |o o% |\n"+ 
+               "  | | % |\n"+ 
+               "  |__%%[|\n";
+          
+          case 12: return
+          
+               "   _____\n" +
+               "  |Q  ww|\n"+ 
+               "  | o {(|\n"+ 
+               "  |o o%%|\n"+ 
+               "  | |%%%|\n"+ 
+               "  |_%%%O|\n";
+          
+          case 13:  return
+               "   _____\n" +
+               "  |K  WW|\n"+ 
+               "  | o {)|\n"+ 
+               "  |o o%%|\n"+ 
+               "  | |%%%|\n"+ 
+               "  |_%%%>|\n";
+                 
+          default : return
+          "bruh";    
+
+    }
+     }
+
+}
