@@ -1,0 +1,172 @@
+
+//This one really challenged me and halted my progression for a while.Still i believe in the grand scheme of things  it bettered me.
+
+import java.util.Scanner;
+
+public class ticTacToe {
+
+    public static void main(String[] args) {
+
+        char[][] map = {
+                { '_', '_', '_' },
+                { '_', '_', '_' },
+                { '_', '_', '_' }
+        };
+
+        printMap(map);
+        for (int t = 0; t < 9; t++) {
+            if (t % 2 == 0) {
+
+                System.out.println("Turn: X");
+                printMap(map);
+                int[] chosen = userChoice(map);
+                map[chosen[0]][chosen[1]] = 'X';
+                int winCondition = checkWin(map);
+                if (winCondition == 3) {
+                    System.out.println("\n Game over. X WON!");
+                    printMap(map);
+                    break;
+                } else if (winCondition == -3) {
+                    System.out.println("\nGame over. O won!");
+                    printMap(map);
+                    break;
+                }
+
+            } else {
+
+                System.out.println("Turn: O");
+                printMap(map);
+                int[] chosen = userChoice(map);
+                map[chosen[0]][chosen[1]] = 'O';
+                int winCondition = checkWin(map);
+                if (winCondition == 3) {
+                    System.out.println("\n Game over. X WON!");
+                    printMap(map);
+                    break;
+                } else if (winCondition == -3) {
+                    System.out.println("\nGame over. O won!");
+                    printMap(map);
+                    break;
+                }
+
+            }
+        }
+
+    }
+
+    public static void printMap(char[][] map) {
+        System.out.println("\n");
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map.length; j++) {
+                System.out.print("\t" + map[i][j]);
+            }
+            System.out.println(" ");
+        }
+        System.out.println("\n");
+    }
+
+    public static int[] userChoice(char[][] map) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("\nPick a row and a column.");
+        int row = scan.nextInt();
+        int column = scan.nextInt();
+        if (map[row][column] == 'O' || map[row][column] == 'X') {
+            System.out.println("The spot is taken, choose another spot.");
+            return userChoice(map);
+
+        } else {
+            return new int[] { row, column };
+        }
+    }
+
+    public static int checkWin(char[][] map) {
+
+        int rows = checkRows(map);
+        if (rows == 3 || rows == -3) {
+            return rows;
+        }
+        int columns = checkColumns(map);
+        if (columns == 3 || columns == -3) {
+            return columns;
+        }
+
+        int left = checkLeft(map);
+        if (left == 3 || left == -3) {
+            return left;
+        }
+        int right = checkRight(map);
+        if (right == 3 || left == -3) {
+            return right;
+        }
+
+        return 0;
+    }
+
+    public static int checkColumns(char[][] map) {
+        int counter = 0;
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map.length; j++) {
+                if (map[j][i] == 'X') {
+                    counter++;
+                } else if (map[j][i] == 'O') {
+                    counter--;
+                }
+                
+            }
+
+            if(counter == 3 || counter == -3){
+                return counter;
+            }
+        }
+        return 0 ;  
+
+    }
+
+    public static int checkRows(char[][] map) {
+        for (int i = 0; i < map.length; i++) {
+        int counter = 0;    
+            for (int j = 0; j < map.length; j++) {
+                if (map[i][j] == 'X') {
+                    counter++;
+                } else if (map[i][j] == 'O') {
+                    counter--;
+                }
+                
+            }
+            if(counter == 3 || counter == -3){
+                return counter;
+            }
+        }
+        return 0;
+
+    }
+
+    public static int checkLeft(char[][] map) {
+        int counter = 0;
+        for (int i = 0; i < map.length; i++) {
+            if (map[i][i] == 'X') {
+                counter++;
+            } else if (map[i][i] == 'O') {
+                counter--;
+            }
+            if(counter == 3 || counter == -3){
+                return counter;
+            }
+        }
+        return 0;
+    }
+
+    public static int checkRight(char[][] map) {
+        int counter = 0;
+        for (int i = 0; i < map.length; i++) {
+            if (map[i][2 - i] == 'X') {
+                counter++;
+            } else if (map[i][2 - i] == 'O') {
+                counter--;
+            }
+            
+        }
+        return counter;
+    }
+
+}
